@@ -1,0 +1,10 @@
+########
+#Without using security credentials
+##########
+
+#Create EC2 instance by UI or 
+#Create EC2 instance by CLI:  aws ec2 run-instances --image-id ami-0a628e1e89aaedf80 --instance-type t2.micro --key-name "window-demo" --region eu-central-1
+#Make/create IAM role and attach policy to it
+#Aws configure
+#Attach EC2 instance with IAM role
+#Now can use ec2 instance from cmd
