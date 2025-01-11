@@ -18,7 +18,6 @@ For automating network devices and other IT appliances where modules cannot be e
 
 # Passowrdless Authenticaiton 
 
-Both instances on cloud
 
 ## Mannage node 
 
@@ -46,7 +45,7 @@ Assign the previlage to the key
 
 Copy key to mannage node 
 
-`sudo ssh-copy-id -i .ssh/id_rsa  ubuntu@<Ip-Address>`
+`ssh-copy-id -i .ssh/id_rsa  ubuntu@<Ip-Address>`
 
 Run this 
 
