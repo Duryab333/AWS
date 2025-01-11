@@ -22,28 +22,32 @@ For automating network devices and other IT appliances where modules cannot be e
 
 First do PasswordAuthenticaion on by:
 
-'sudo vim /etc/ssh/sshd_config.d/60-cloudimg-settings.conf' 
+`sudo vim /etc/ssh/sshd_config.d/60-cloudimg-settings.conf` 
  
-Researt ssh by:
+Restart ssh by:
 
-'sudo systemctl restart ssh'
+`sudo systemctl restart ssh`
 
 Set the password
 
-'sudo  passwd ubuntu'
+`sudo  passwd ubuntu`
 
 ## Control Node
 
-first generate the key by 
+First generate the key by 
 
 `ssh-keygen -t rsa -b 4096` 
 
 Assign the previlage to the key 
 
 `chmod 600 /home/ubuntu/.ssh/id_rsa`
-copy key to mannage node 
+
+Copy key to mannage node 
+
 `sudo ssh-copy-id -i .ssh/id_rsa  ubuntu@<Ip-Address>`
-run this 
+
+Run this 
+
 `ssh ubuntu@<Ip-Address>`
 
 Congratulations you are now on your node server.
