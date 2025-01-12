@@ -1,6 +1,8 @@
 # Ansible installation
 
-`sudo apt install ansible`
+```
+sudo apt install ansible
+```
 
 or
  
@@ -17,7 +19,9 @@ Make an inventory file
 
 ## Static Inventory
 
-`vim inventory.ini`
+```
+vim inventory.ini
+```
 
 add mannage nodes in it 
 
@@ -40,11 +44,16 @@ username@<Ip-Address>
 
 to see if you are able to access your mannage nodes from control node do ping on all 
 
-`ansible -i inventory.ini -m ping all`
+```
+ansible -i inventory.ini -m ping all
+```
 
 or by group
 
-`ansible -i inventory.ini -m ping <group-name> `
+```
+ansible -i inventory.ini -m ping <group-name>
+```
+
 
 
 
