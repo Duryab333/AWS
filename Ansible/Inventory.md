@@ -1,8 +1,13 @@
 # Ansible installation
 
-`sudo apt install pipx`
+`sudo apt install ansible`
+
+or
  
- `pipx install ansible`
+```
+ sudo apt install pipx
+ pipx install ansible
+ ```
 
 
 # Inventory
@@ -38,6 +43,7 @@ to see if you are able to access your mannage nodes from control node do ping on
 `ansible -i inventory.ini -m ping all`
 
 or by group
+
 `ansible -i inventory.ini -m ping <group-name> `
 
 
