@@ -47,16 +47,19 @@ ansible-galaxy collection install amazon.aws
 
 conside control node as aws-ec2 isntance
 - Create aws ec2 instance
-- Attach AMI role: full Ec2 acress
 -  Install
 -  ```
    sudo apt install ansible
-   sudo apt install python-pip
+   sudo apt install pipx
    sudo amazon-linux-extras install ansible
+   pipx install boto3 --include-deps
    pip instal boto3
    ```
+1) Attaching IAM role
 
-- Creat a yml file
+Attach AMI role: full Ec2 acress
+  
+- Creat a playbook.yml file
 ```
 --- 
 - hosts: localhost
@@ -80,7 +83,7 @@ conside control node as aws-ec2 isntance
 ```
 - Check the syntax of file by
 ```
-  ansible-playbook --syntax-chexk file_name.yml
+  ansible-playbook --syntax-chexk playbook.yml
   
 ```
 - Check locally the playbook
@@ -90,7 +93,25 @@ conside control node as aws-ec2 isntance
 ```
 - To Run the playbook
 ```
-  ansible-playbook file_name.yml
-  
+  ansible-playbook playbook.yml
 ```
+2) Use Access key
+
+- Setup Vault:
+
+Create a password for vault
+
+```
+openssl rand -base64 2048 > vault.pass
+```
+- ec2_access_key: --access_key_id
+- ec2_secret_key: --secure_key
+
+Add your AWS credentials using the below vault command
+
+```
+ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
+```
+
+
   
