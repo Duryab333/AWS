@@ -55,7 +55,7 @@ conside control node as aws-ec2 isntance
    pipx install boto3 --include-deps
    pip instal boto3
    ```
-1) Attaching IAM role
+## 1) Attaching IAM role
 
 Attach AMI role: full Ec2 acress
   
@@ -95,14 +95,14 @@ Attach AMI role: full Ec2 acress
 ```
   ansible-playbook playbook.yml
 ```
-2) Use Access key
+## 2) Use Access key
 
 - Setup Vault:
 
 Create a password for vault
 
 ```
-openssl rand -base64 2048 > vault.pass
+  openssl rand -base64 2048 > vault.pass
 ```
 - ec2_access_key: --access_key_id
 - ec2_secret_key: --secure_key
@@ -110,8 +110,9 @@ openssl rand -base64 2048 > vault.pass
 Add your AWS credentials using the below vault command
 
 ```
-ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
+  ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
 ```
-
-
-  
+- To run ansible-paybook
+```
+  ansible-playbook ec2_create.yml --vault-password-file vault.pass
+```
