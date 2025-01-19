@@ -96,7 +96,7 @@ Attach AMI role: full Ec2 acress
 ```
 ## 2) Use Access key
 
-- Setup Vault:
+- Setup Vault: to secure access key of aws
 
 Create a password for vault
 
