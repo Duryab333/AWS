@@ -33,12 +33,14 @@ ansible-playbook -i inventory.ini install_apache_server.yml
 ```
 
 ## Ansible Colections
+
 ### AWS Collecions
+
 Pre-requisit install AWS collections on Ansible-mannage mode
 
-'''
+```
 ansible-galaxy collection install amazon.aws
-'''
+```
 
 
 #### AWS EC2 Deployment
