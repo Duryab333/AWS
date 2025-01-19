@@ -32,7 +32,16 @@ To run a playbook
 ansible-playbook -i inventory.ini install_apache_server.yml
 ```
 
-## AWS EC2 Deployment
+## Ansible Colections
+### AWS Collecions
+Pre-requisit install AWS collections on Ansible-mannage mode
+
+'''
+ansible-galaxy collection install amazon.aws
+'''
+
+
+#### AWS EC2 Deployment
 
 conside control node as aws-ec2 isntance
 - Create aws ec2 instance
@@ -40,7 +49,7 @@ conside control node as aws-ec2 isntance
 -  Install
 -  ```
    sudo apt install ansible
-   sudo yum install python-pip
+   sudo apt install python-pip
    sudo amazon-linux-extras install ansible
    pip instal boto3
    ```
@@ -69,17 +78,17 @@ conside control node as aws-ec2 isntance
 ```
 - Check the syntax of file by
 ```
-  ansible-playbook --syntax-chexk first-file.yml
+  ansible-playbook --syntax-chexk file_name.yml
   
 ```
 - Check locally the playbook
 
 ```
-  ansible-playbook -C first-file.yml
+  ansible-playbook -C file_name.yml
 ```
 - To Run the playbook
 ```
-  ansible-playbook first-file.yml
+  ansible-playbook file_name.yml
   
 ```
   
