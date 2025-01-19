@@ -14,7 +14,4 @@ Automate the shutdown of Ubuntu Instances only using Ansible Conditionals
 
 Hint: Use when condition on ansible gather_facts
 
-Solutions:
-## Task 1
-- create IAM user with polocy ec2 full access.
- - Security credentials > create access key for that user 
+
