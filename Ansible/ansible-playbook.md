@@ -39,7 +39,7 @@ ansible-playbook -i inventory.ini install_apache_server.yml
 Pre-requisit install AWS collections on Ansible-mannage mode
 
 ```
-ansible-galaxy collection install amazon.aws
+ ansible-galaxy collection install amazon.aws
 ```
 
 
@@ -84,7 +84,6 @@ Attach AMI role: full Ec2 acress
 - Check the syntax of file by
 ```
   ansible-playbook --syntax-chexk playbook.yml
-  
 ```
 - Check locally the playbook
 
@@ -93,7 +92,7 @@ Attach AMI role: full Ec2 acress
 ```
 - To Run the playbook
 ```
-  ansible-playbook playbook.yml
+ ansible-playbook playbook.yml
 ```
 ## 2) Use Access key
 
@@ -102,7 +101,7 @@ Attach AMI role: full Ec2 acress
 Create a password for vault
 
 ```
-  openssl rand -base64 2048 > vault.pass
+ openssl rand -base64 2048 > vault.pass
 ```
 - ec2_access_key: --access_key_id
 - ec2_secret_key: --secure_key
@@ -110,9 +109,9 @@ Create a password for vault
 Add your AWS credentials using the below vault command
 
 ```
-  ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
+ ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
 ```
 - To run ansible-paybook
 ```
-  ansible-playbook ec2_create.yml --vault-password-file vault.pass
+ ansible-playbook ec2_create.yml --vault-password-file vault.pass
 ```
