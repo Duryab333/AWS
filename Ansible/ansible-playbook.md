@@ -48,12 +48,18 @@ Pre-requisit install AWS collections on Ansible-mannage mode
 conside control node as aws-ec2 isntance
 - Create aws ec2 instance
 -  Install
+Ubuntu
 -  ```
    sudo apt install ansible
    sudo apt install pipx
-   sudo amazon-linux-extras install ansible
    pipx install boto3 --include-deps
    pip instal boto3
+   ```
+AWS Linux
+```
+   sudo yum install python-pip
+   sudo amazon-linux-extras install ansible2
+   pip install boto 
    ```
 ## 1) Attaching IAM role
 
