@@ -12,7 +12,7 @@ ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 - "-o IdentityFile <PATH TO PEM FILE>": This option specifies the identity file (private key) to use for the connection. The -o flag passes this option to the underlying ssh command.
 - ubuntu@<INSTANCE-IP>: This is the username (ubuntu) and the IP address of the remote server you want to access.
 
-Note: You must have the pem file on control node. If you don't have make/download it. 
+Note: You must have the pem file on control node. If you don't have, then make/download it. 
 
 ### Using Password 
 
