@@ -89,7 +89,7 @@ Attach AMI role: full Ec2 acress
 ```
 - Check the syntax of file by
 ```
-  ansible-playbook --syntax-chexk playbook.yml
+  ansible-playbook --syntax-check playbook.yml
 ```
 - Check locally the playbook
 
