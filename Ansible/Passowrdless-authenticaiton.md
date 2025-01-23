@@ -20,32 +20,45 @@ Note: You must have the pem file on control node. If you don't have, then make/d
 
 First do PasswordAuthenticaion on by:
 
-`sudo vim /etc/ssh/sshd_config.d/60-cloudimg-settings.conf` 
- 
+```
+sudo vim /etc/ssh/sshd_config.d/60-cloudimg-settings.conf 
+ ```
 Restart ssh by:
 
-`sudo systemctl restart ssh`
+```
+sudo systemctl restart ssh
+```
 
 Set the password
 
-`sudo  passwd ubuntu`
+```
+sudo  passwd ubuntu
+```
 
 ## Control Node
 
 First generate the key by 
 
-`ssh-keygen -t rsa -b 4096` 
+```
+ssh-keygen -t rsa -b 4096
+```
 
 Assign the previlage to the key 
 
-`chmod 600 /home/ubuntu/.ssh/id_rsa`
+```
+chmod 600 /home/ubuntu/.ssh/id_rsa
+```
 
 Copy key to mannage node 
 
-`ssh-copy-id -i .ssh/id_rsa  ubuntu@<Ip-Address>`
+```
+ssh-copy-id -i .ssh/id_rsa  ubuntu@<Ip-Address>
+```
 
 Run this 
 
-`ssh ubuntu@<Ip-Address>`
+```
+ssh ubuntu@<Ip-Address>
+```
 
 Congratulations you are now on your node server.
