@@ -41,7 +41,7 @@ Tasks are
 
 ## Defining Failure
 
-you can ignore specific errors by using `  failed_when: ` 
+you can ignore specific errors by using `  failed_when: `  For that puropose of getting the output into variable ` copy_result `
 
 ```
 
@@ -50,13 +50,12 @@ you can ignore specific errors by using `  failed_when: `
   become: true
 
   tasks:
-    # 1. ignore_errors - Ignoring the error
     - name: index.html copy with ignore_error
       template: src=index.html dest=/home/ubuntu
       register: copy_result
       ignore_errors: true
 
-    - name: String Variable from - main_playbook_variable
+    - name: String Variable from - main_playbook_variable to show into console
       debug:
         var: copy_result
 
