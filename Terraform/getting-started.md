@@ -39,6 +39,12 @@ terraform plan
 terraform apply
 ```
 
+
+`terraform init` : to initalize the terraform
+`terraform plan` : to dry run terraform , for debug purpose
+`terraform apply` : to run the terraform script
+
+
 this will create ec2-instance in your aws region.
 
 - To destroy what you have created resources using terraform 
