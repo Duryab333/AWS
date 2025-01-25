@@ -40,3 +40,9 @@ terraform apply
 ```
 
 this will create ec2-instance in your aws region.
+
+- To destroy what you have created resources using terraform 
+
+```
+terraform destroy
+```
