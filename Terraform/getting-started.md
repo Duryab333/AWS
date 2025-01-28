@@ -1,5 +1,16 @@
-# Start with terraform
+# Start with Terraform
 
+1- Install AWS CLI (Command Line Interface)
+
+2- Create an AWS IAM User
+
+3- Configure AWS CLI Credentials:
+
+```
+aws configure
+```
+
+## Setup Terraform for AWS
 configure with aws using command ` aws configure `
 create terraform file : main.tf
 - This is to create an ec2-instance on aws
