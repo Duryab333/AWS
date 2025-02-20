@@ -16,11 +16,11 @@ aws configure
 Now we can access the aws by comand line.
 
 ```
-aws s3api create-bucket --bucket second-admin-aws-s3-bucket --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1  
+aws s3api create-bucket --bucket bucket-name-aws-s3-bucket --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1  
 ```
 or
 ```
-aws s3 mb s3://your-bucket-name
+aws s3 mb s3://bucket-name-aws-s3-bucket
 ```
 
 To print s3 buckets on your AWS
@@ -30,12 +30,12 @@ aws s3 ls
 
 To see what is inside of a bucket:  
 ```
-aws s3 ls s3://first-admin-aws-s3-bucket --recursive --human-readable --summarize
+aws s3 ls s3://bucket-name-aws-s3-bucket --recursive --human-readable --summarize
 ```
 
 To Delete empty bucket:   
 ```
-aws s3api delete-bucket --bucket second-admin-aws-s3-bucket12 --region eu-central-1 
+aws s3api delete-bucket --bucket bucket-name-aws-s3-bucket --region eu-central-1 
 ```
 
 To Delete non-empty bucket: 
@@ -45,13 +45,13 @@ aws s3 rm s3://first-admin-aws-s3-bucket --recursive
 ```
 Then delete  bucket : 
 ```
-aws s3api delete-bucket --bucket  first-admin-aws-s3-bucket 
+aws s3api delete-bucket --bucket  bucket-name-aws-s3-bucket 
 ```
 or
 ```
-aws s3 rb s3://first-admin-aws-s3-bucket --force   
+aws s3 rb s3://bucket-name-aws-s3-bucket --force   
 ```
 or
 ```
-aws s3 rb s3://your-bucket-name
+aws s3 rb s3://bucket-name-aws-s3-bucket
 ```
