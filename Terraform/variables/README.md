@@ -1,14 +1,17 @@
 # Terraform Project: Creating an EC2 Instance on AWS  
 
-This project demonstrates how to use Terraform to provision an EC2 instance on AWS. It covers essential Terraform concepts such as providers, resources, variables, and outputs.  
+This project demonstrates how to use Terraform to provision an EC2 instance on AWS. It covers essential Terraform concepts such as providers, resources, variables, modularizatoin and outputs.  
 
 ## Project Structure  
-The Terraform project consists of four files:  
+The Terraform project consists of two files main.tf and three files in modules/ec2_instances:  
 
 1. **main.tf** – Defines the AWS provider and the EC2 instance resource. This file specifies the instance configuration, including the AMI, instance type, and other necessary parameters.  
 2. **variables.tf** – Declares input variables such as the AMI ID and EC2 instance type, making the configuration more flexible and reusable.  
-3. **outputs.tf** – Specifies output variables to display important information, such as the public IP address of the created EC2 instance.  
-4. **terraform.tfvars** – Assigns values to the input variables defined in `variables.tf`. This file allows easy configuration changes without modifying the main Terraform code.  
+3. **outputs.tf** – Specifies output variables to display important information, such as the public IP address of the created EC2 instance.
+extra file:
+5. **terraform.tfvars** – Assigns values to the input variables defined in variables.tf. This file allows easy configuration changes without modifying the main Terraform code.
+
+terraform.tfvars file is not needed if you are doing modularization and passing the variables inside the main.tf file while calling the module.
 
 ## Variables  
 Terraform uses variables to manage configuration settings efficiently.  
