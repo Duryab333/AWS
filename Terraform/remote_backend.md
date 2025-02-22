@@ -29,7 +29,7 @@ Here's how to set it up:
 
 
 ### S3 buckt creation
-main.tf file 
+`main.tf` file 
 
 ```
 provider "aws" {
@@ -70,7 +70,7 @@ terraform apply
 
 ```
 means first create the s3 bucket and dynamodb then write the backend file then again exeute with terraform init and all
-then write the backend file 
+then write the `backend.tf` file 
 
 ```
 terraform {
@@ -89,5 +89,7 @@ terraform {
 **Conclusion**
 
 ✅ S3 securely stores the Terraform state file.
+
 ✅ DynamoDB prevents multiple users from modifying the state at the same time.
+
 ✅ Terraform now has a reliable, scalable state management system.
