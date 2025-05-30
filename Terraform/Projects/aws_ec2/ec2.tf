@@ -15,30 +15,31 @@ resource "aws_default_vpc" "default" {
 resource "aws_security_group" "ec2_security_group" {
   name        = "allow_sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
-  vpc_id      = aws_default_vpc.default.id  # interpolaiton
+  vpc_id      = aws_default_vpc.default.id # interpolaiton
   # inbound rule
   ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "SSH open"
 
   }
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "HTTP open"
   }
 
+
   #outbount rule
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
-    cidr_blocks =  ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
     description = "all access open outbound"
 
   }
@@ -51,11 +52,15 @@ resource "aws_security_group" "ec2_security_group" {
 # ec2 instance
 
 resource "aws_instance" "terraform_instance" {
-  ami           = var.ec2_ami_id
-  instance_type = var.ec2_instance_type
-  key_name = aws_key_pair.ec2_key.key_name
-  security_groups = [ aws_security_group.ec2_security_group.name ]
-  user_data = file("install_nginx.sh")
+  for_each = tomap({
+    instance1 = "t2.micro"
+    instance2 = "t2.micro"
+  })
+  ami             = var.ec2_ami_id
+  instance_type   = each.value   #var.ec2_instance_type
+  key_name        = aws_key_pair.ec2_key.key_name
+  security_groups = [aws_security_group.ec2_security_group.name]
+  user_data       = file("install_nginx.sh")
 
   root_block_device {
     volume_size = var.allow_root_stroage_size
@@ -63,6 +68,6 @@ resource "aws_instance" "terraform_instance" {
   }
 
   tags = {
-    Name = "terraform_instance"
+    Name = each.key # "terraform_instance"
   }
 }
