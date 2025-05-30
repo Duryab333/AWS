@@ -1,4 +1,4 @@
-# EC2 instance creation using Terraform:
+# EC2 instance creation with automated Nginx installation:
 
 This will create all the configuraiton required to make an ec2 instance on AWS
 
