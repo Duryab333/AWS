@@ -49,20 +49,24 @@ key1 = "value1"
 key2 = "value2"
 }
 ```
+
 to use them just use `each.key` where you have to put key and `each.value` where you have to use value.
 
 #### Use of depends-on
 
 until specific resources are not make do not make that resource that has meta-argumnet of depends_on
+
 ```
 depends_on = [ aws_security_group.ec2_security_group , aws_key_pair.ec2_key ]
 ```
+
 ## Conditional Expression
 
 variable = condition ? True : False
 
 example: if the enviornment is produciton then volum size of ec2 is 20GB if not (in developemnt) then 8GB 
+
 ```
-volum
+volume_size = var.env == "prd" ? 20: 8
 
 ```
