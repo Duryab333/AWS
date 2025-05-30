@@ -56,6 +56,7 @@ resource "aws_instance" "terraform_instance" {
     instance1 = "t2.micro"
     instance2 = "t2.micro"
   })
+  depends_on = [ aws_security_group.ec2_security_group , aws_key_pair.ec2_key ]
   ami             = var.ec2_ami_id
   instance_type   = each.value   #var.ec2_instance_type
   key_name        = aws_key_pair.ec2_key.key_name
@@ -63,7 +64,8 @@ resource "aws_instance" "terraform_instance" {
   user_data       = file("install_nginx.sh")
 
   root_block_device {
-    volume_size = var.allow_root_stroage_size
+    volume_size = var.env == "prd" ? 20: var.ec2_default_root_storage_size
+    #volume_size = var.allow_root_stroage_size
     volume_type = "gp3"
   }
 
