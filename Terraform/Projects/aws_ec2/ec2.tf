@@ -25,8 +25,13 @@ resource "aws_security_group" "ec2_security_group" {
     description = "SSH open"
 
   }
-
-
+  ingress {
+    from_port = 80
+    to_port = 80
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "HTTP open"
+  }
 
   #outbount rule
   egress {
@@ -50,6 +55,7 @@ resource "aws_instance" "terraform_instance" {
   instance_type = var.ec2_instance_type
   key_name = aws_key_pair.ec2_key.key_name
   security_groups = [ aws_security_group.ec2_security_group.name ]
+  user_data = file("install_nginx.sh")
 
   root_block_device {
     volume_size = var.allow_root_stroage_size
