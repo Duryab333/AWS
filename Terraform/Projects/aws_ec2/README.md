@@ -28,8 +28,12 @@ terraform validate
 terraform plan
 terraform apply -auto-approve
 ```
-# Multiple instances
 
+## Meta-Arguments
+
+### Multiple instances
+
+#### Use of Count
 In aws_instance block use attribute `count` suppose count=2 to make multiple instances.
 For the output variable make chanes in line :
 
@@ -37,7 +41,7 @@ For the output variable make chanes in line :
 values = aws_instance.instance_name[*].value
 
 ```
-## Use of for_each
+#### Use of for_each
 
 ```
 for-each = tomap{
@@ -46,3 +50,19 @@ key2 = "value2"
 }
 ```
 to use them just use `each.key` where you have to put key and `each.value` where you have to use value.
+
+#### Use of depends-on
+
+until specific resources are not make do not make that resource that has meta-argumnet of depends_on
+```
+depends_on = [ aws_security_group.ec2_security_group , aws_key_pair.ec2_key ]
+```
+## Conditional Expression
+
+variable = condition ? True : False
+
+example: if the enviornment is produciton then volum size of ec2 is 20GB if not (in developemnt) then 8GB 
+```
+volum
+
+```
