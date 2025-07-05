@@ -58,4 +58,10 @@ CloudTrail's Event History is useful for quickly eading (management) events that
 7)   Setup CloudWatch Alaram and SNS:
    The CloudWatch alarm goes off i.e. it detect when something's wrong/something exceeds a defined threshold, whereas SNS notifies i.e. it tells you that something is gone wrong.
 -   Create a Cloudwatch alarm : which is a freature and alert system wheihc is designed to goe off i.e. indicate when certain condiions have been met in our log group
--   In Alarm Configure actions: set notification service 
+-   In Alarm Configure actions: set notification service
+
+### TroubleShooting for Error:
+when trouble shoooting the notificaiton issues, we investigated every single part of our monitoring system whether CloudTrail is picking up on events that are happening when we access our secret whether CloudTrail actually sending logs to Cloudwatch, we also varifited where the filter is accedently rejecteng the corrrect events, whether the trigirring  the alarm sends an email.
+
+So we initally did not recieve email becuase the Cloudwatch was configured with wrong threshold -instead of calculaitng the AVERAGE number of times a secret was accessed in a time period, it should've been the SUM.
+
