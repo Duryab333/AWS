@@ -54,7 +54,7 @@ CloudTrail's Event History is useful for quickly reading (management) events tha
 6)   Add a filter in Cloudwatch
 7)   Setup CloudWatch Alarm and SNS:
    The CloudWatch alarm goes off i.e. it detects when something's wrong/something exceeds a defined threshold, whereas SNS notifies i.e. it tells you that something has gone wrong.
--   Create a CloudWatch alarm: which is a feature and alert system which is designed to go off i.e. indicate when certain conditions have been met in our log group
+-   Create a CloudWatch alarm: which is a feature and alert system which is designed to go ON i.e. indicate when certain conditions have been met in our log group
 -   In Alarm Configure Actions: set notification service
 
 ### TroubleShooting for Error:
