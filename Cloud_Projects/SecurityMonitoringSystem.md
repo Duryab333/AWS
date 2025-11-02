@@ -38,6 +38,7 @@ aws secretsmanager get-secret-value --secret-id "YOUR-SECRET-ID" --region YOUR-R
 ```
 
 Then you can access your secrets.
+
 3)  Now check the Event History in CloudTrail — we can see information about accessing Secret Keys.
 
 ## CloudWatch
